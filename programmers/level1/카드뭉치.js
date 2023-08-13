@@ -1,11 +1,13 @@
-function solution(k, m, score) {
-  var answer = 0;
-  score.sort((a, b) => b - a);
-  for (let i = 0; i < score.length; i += m) {
-    if (score.slice(i, i + m).length !== m) {
-      break;
+function solution(cards1, cards2, goal) {
+  for (const s of goal) {
+    if (cards1[0] === s) {
+      cards1.shift();
+    } else if (cards2[0] === s) {
+      cards2.shift();
+    } else {
+      return "No";
     }
-    answer += score.slice(i, i + m)[m - 1] * m;
   }
-  return answer;
+
+  return "Yes";
 }
