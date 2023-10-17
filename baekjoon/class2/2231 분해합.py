@@ -1,7 +1,17 @@
-n=input()
-result = 0
+s=input()
 
-for i in range(len(n)) :
-    result+=int(n[i])
+if int(s) < 18 :
+    c=0
+else :
+    c=int(s)-9*len(s)
 
-print(int(n)+result)
+for i in range(c,int(s)+1) :
+    result=0
+    for j in range(len(str(i))) :
+        result+=int(str(i)[j])
+    if i+result == int(s) :
+        print(i)
+        break
+
+else : 
+    print(0)
