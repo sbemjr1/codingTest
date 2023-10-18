@@ -1,10 +1,18 @@
-n=int(input())
-i=1
-x=1
+n,m=map(int, input().split())
 
-while True :
-    i+=6
-    if n <= i and n >= i-6*x+1 :
-        print(x+1)
-        exit()
-    x+=1
+nums = list(map(int, input().split()))
+
+result = []
+
+for i in range(1,len(nums)-1) :
+    for j in range(i+1,len(nums)) :
+        result.append(nums[0]+nums[i]+nums[j])
+        if nums[0]+nums[i]+nums[j] == m :
+            print(nums[0]+nums[i]+nums[j])
+            exit()
+
+result = list(filter(lambda x:x-m<0,result))
+
+result.sort(reverse=True)
+
+print(result[0])

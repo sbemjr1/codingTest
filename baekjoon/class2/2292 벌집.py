@@ -1,10 +1,9 @@
-n=int(input())
-i=1
-x=1
+n = int(input())
 
-while True :
-    i+=6*x
-    if n <= i and n >= i-6*x+1 :
-        print(x+1)
-        exit()
-    x+=1
+nums = 1  # 벌집의 개수, 1개부터 시작
+cnt = 1
+
+while n > nums :
+    nums += 6*cnt
+    cnt+=1
+print(cnt)
