@@ -1,3 +1,10 @@
-elif (q!=0) :
-        #     for j in range(n) :
-        #         d[q].append(d[q-1][n] + d[q][n-1])
+N=int(input())
+NF=1
+
+for i in range(N,0,-1) :
+    NF*=i
+
+if str(NF).find("0") != -1 :
+    print(len(str(NF))-str(NF).find("0"))
+else :
+    print(0)
