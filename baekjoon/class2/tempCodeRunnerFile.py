@@ -1,2 +1,0 @@
-
-# Ncopy = list(set(Ncopy))
