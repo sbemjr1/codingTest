@@ -1,30 +1,28 @@
-# import sys
-# input=sys.stdin.readline
+while True :
+    S = input()
+    _stack=[]
 
-# while True :
-#     S = input().rstrip()
-#     _stack=[]
-#     isCorrect = True
+    if S == "." :
+        break
 
-#     if S == "." :
-#         break
-
-#     for i in range(len(S)) :
-#         if S[i]=="(" or S[i] == "[" :
-#             _stack.append(S[i])
-#         elif len(_stack)!=0 and (_stack[-1]=="(" and S[i] ==")") :
-#             _stack.pop()
-#         elif len(_stack)!=0 and (_stack[-1]=="[" and S[i] =="]") :
-#             _stack.pop()
-#         elif len(_stack)==0 and (S[i] =="]") :
-#             isCorrect=False
-#         elif len(_stack)==0 and (S[i] ==")") :
-#             isCorrect=False
-#         else :
-#             isCorrect=False
+    for i in S :
+        if i=="(" or i == "[" :
+            _stack.append(i)
+        elif i ==")" :
+            if len(_stack) != 0 and _stack[-1] =="(" :
+                _stack.pop()
+            else :
+                _stack.append(")")
+                break
+        elif i =="]" :
+            if len(_stack) != 0 and _stack[-1] =="[" :
+                _stack.pop()
+            else :
+                _stack.append("]")
+                break
     
-#     if isCorrect and len(_stack)==0:
-#         print('yes')
-#     else :
-#         print('no')
+    if len(_stack)==0 :
+        print('yes')
+    else :
+        print("no")
         
