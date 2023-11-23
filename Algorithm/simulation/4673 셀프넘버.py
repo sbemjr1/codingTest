@@ -1,4 +1,4 @@
-numbers = set(range(1, 11))
+numbers = set(range(1, 10001))
 remove_set = set()  # 생성자가 있는 숫자 set
 
 for num in numbers :
